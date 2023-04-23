@@ -35,9 +35,29 @@ body
     background-position: center;
     background-size: cover;
     // width:80%;
-    width: 50vw;
-    max-width: 300px;
+    width: 40vw;
+    max-width: 20vw;
     aspect-ratio: 1/1;
 }
 
+.aboutMe
+{
+    display:grid; gap:55px; grid-template-columns: auto 1fr; grid-template-rows: 1fr; padding:25px; box-sizing: border-box; max-width:700px;
+    padding-top:250px; 
+    .textSection { .fullSize; .center; }
+}
+
 .center { display:flex; justify-content: center; align-items: center; }
+
+@media only screen and (max-width: 700px) 
+{
+    .aboutMe 
+    {
+        display:grid; gap:0px; grid-template-rows: min-content min-content; grid-template-columns: 1fr; padding:25px; box-sizing: border-box; max-width:700px;
+        padding-top:275px; 
+    }
+
+    .aboutMeB { padding:25px; box-sizing: border-box;  }
+
+    .textSection { align-items: flex-start; .center; box-sizing: border-box; }
+}
