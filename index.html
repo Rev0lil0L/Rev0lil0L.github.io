@@ -3,34 +3,34 @@
         <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+        <link rel="stylesheet/less" type="text/css" href="style.less" />
+        <script src="https://cdn.jsdelivr.net/npm/less" ></script>
         <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,500;0,700;0,900;1,100;1,300;1,500;1,700;1,900&display=swap" rel="stylesheet">
     </head>
     <body style="width:100%; height:100%; margin:0px; padding:0px;">
-        <div style="width:100%; height:50px; position:fixed; background:rgba(0,0,0,0.3); display:flex; justify-content: flex-end;">
-            <div>
-                <div class="navBarButton"><h3 style="font-weight:100; white-space:nowrap;">About Me</h3></div>
-                <div class="navBarButton"><h3 style="font-weight:100; white-space:nowrap;">About Me</h3></div>
-                <div class="navBarButton"><h3 style="font-weight:100; white-space:nowrap;">About Me</h3></div>
+        <div id="app">
+            <div style="width:100%; min-height:50px; position:fixed; background:rgba(0,0,0,0.3); display:flex; justify-content: flex-end;">
+                <div>
+                    <div :class="{'active': currentPage=='am'}" class="navBarButton"><h3>About Me</h3></div>
+                    <div :class="{'active': currentPage=='gp'}" class="navBarButton"><h3>Goals & Plans</h3></div>
+                    <div :class="{'active': currentPage=='sw'}" class="navBarButton"><h3>Strength & Weakness</h3></div>
+                    <div :class="{'active': currentPage=='c'}" class="navBarButton"><h3>Contact</h3></div>
+                </div>
+            </div>
+            <div v-if="currentPage=='am'" class="fullSize" style="width:100%; height:100%;">
+
             </div>
         </div>
-        <style>
-        body
+        <script>
+        const { createApp } = Vue;
+        createApp(
         {
-            background: rgb(85,99,121);
-            background: linear-gradient(90deg, rgba(0,88,103,1) 0%, rgba(0,84,99,1) 100%);
-        }
-        .navBarButton
-        {
-            transition: all 0.5s ease;
-            height:100%; display:flex; justify-content: center; align-items: center; font-size:14px;
-            padding-left:15px; padding-right:15px; display: inline-block;
-            color:white; font-family: 'Schibsted Grotesk', sans-serif; font-weight:900; width:min-content;
-        }
-        .navBarButton:hover
-        {
-            transition: all 0.5s ease;
-            cursor:pointer; filter:brightness(1.3); background:#FFFFFF22;
-        }
-        </style>
+            data() 
+            {
+                return { currentPage: 'am' }
+            }
+        }).mount('#app')
+        </script>
     </body>
 </html>
