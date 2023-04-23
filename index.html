@@ -21,7 +21,7 @@
                 <div>
                     <div class="aboutMe">
                         <div class="center fullSize">
-                            <div class="meIcon"></div> 
+                            <div class="meIcon"></div>
                         </div>
                         <div class="textSection">
                             <div>
@@ -47,33 +47,27 @@
                     </div>
                 </div>
             </div>
-            <div v-if="currentPage=='gp'" class="center main">
-                <div>
-                    <div class="goalsAndPlans">
-                        <div class="center fullSize">
-                            <div class="goalsIcon"></div>
-                        </div>
-                        <div class="textSection">
-                            <div>
-                                <h3 style="font-weight: bold; font-size:24px;">Goals and Plans</h3>
-                                <div style="text-align:justify;">
-                                    In the upcoming years, I plan to continue expanding my technical skills and knowledge, with a particular focus on emerging technologies such as artificial intelligence and machine learning. I am excited about the potential applications of these technologies in software development and am eager to explore their use in creating innovative and effective solutions for my clients.
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="fullSize center goalsAndPlansB">
-                        <div style="max-width:700px; margin-bottom:50px;">
-                            <div style="text-align:justify;">
-                                Another area of focus for me is developing my leadership and project management skills. I have a passion for mentoring and coaching junior developers and am interested in pursuing opportunities to manage software development projects from conception to delivery. I believe that effective project management is essential for delivering successful software products, and I am eager to learn more about best practices in this area.
-                            </div>
-                            <div style="text-align:justify; margin-top:15px;">
-                                In addition to technical and leadership skills, I also plan to devote more time to contributing to open-source projects and participating in online communities to share knowledge and collaborate with other developers. I believe that contributing to the wider software development community is an essential part of being a successful software designer, and I am excited to continue learning and growing in this area.
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
+        <script>
+        const { createApp } = Vue;
+        createApp(
+        {
+            data() 
+            {
+                var data = 
+                {
+                    currentPage: 'am',
+                    pages: 
+                    [
+                        ["am", "About Me"],
+                        ["gp", "Goals & Plans"],
+                        ["sw", "Strength & Weakness"],
+                        ["c", "Contact"]
+                    ]
+                };
+                return data;
+            }
+        }).mount('#app')
+        </script>
     </body>
 </html>
