@@ -2,15 +2,16 @@
 
 body
 {
-    background: rgb(85,99,121);
-    background: linear-gradient(90deg, rgba(0,88,103,1) 0%, rgba(0,84,99,1) 100%);
+    background: white;
+    // background: rgb(85,99,121);
+    // background: linear-gradient(90deg, rgba(0,88,103,1) 0%, rgba(0,84,99,1) 100%);
 }
 .navBarButton
 {
     transition: all 0.3s ease;
     height:50px; display:flex; justify-content: center; align-items: center; font-size:14px;
     padding-left:15px; padding-right:15px; display: inline-block;
-    color:white; font-family: 'Schibsted Grotesk', sans-serif; font-weight:900; width:min-content;
+    color:black; font-family: 'Schibsted Grotesk', sans-serif; font-weight:900; width:min-content;
     h3 { font-weight:100; white-space:nowrap; }
 
     &:hover
@@ -25,3 +26,18 @@ body
         h3 { font-weight:bold !important; }
     }
 }
+
+.meIcon
+{
+    border-radius: 100%;
+    border: 5px solid #555555;
+    background:url("./icon.png");
+    background-position: center;
+    background-size: cover;
+    // width:80%;
+    width: 50vw;
+    max-width: 300px;
+    aspect-ratio: 1/1;
+}
+
+.center { display:flex; justify-content: center; align-items: center; }

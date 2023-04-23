@@ -10,14 +10,24 @@
     </head>
     <body style="width:100%; height:100%; margin:0px; padding:0px;">
         <div id="app">
-            <div style="width:100%; min-height:50px; position:fixed; background:rgba(0,0,0,0.3); display:flex; justify-content: flex-end;">
+            <div style="width:100%; min-height:50px; background:rgba(0,0,0,0.3); display:flex; justify-content: flex-end; position:sticky">
                 <div>
                     <div v-for="page in pages" :class="{'active': currentPage == page[0]}" @click="currentPage = page[0]"
                     class="navBarButton"><h3>{{page[1]}}</h3></div>
                 </div>
             </div>
-            <div v-if="currentPage=='am'" class="fullSize" style="width:100%; height:100%;">
-
+            <div v-if="currentPage=='am'" class="fullSize center">
+                <div class="desktopView fullSize" style="display:grid; gap:55px; grid-template-columns: auto 1fr; grid-template-rows: 1fr; padding:25px; box-sizing: border-box; max-width:700px;">
+                    <div class="center fullSize">
+                        <div class="meIcon"></div>
+                    </div>
+                    <div class="fullSize center">
+                        <div>
+                            <h3 style="font-weight: bold; font-size:24px;">About Me</h3>
+                            <div style="text-align:justify;">As a software designer, I am committed to staying at the forefront of emerging technologies and industry trends in order to deliver innovative software solutions that meet the needs of my clients. Throughout my career, I have demonstrated a passion for learning and have sought out opportunities to expand my skillset through training, professional development courses, and hands-on experience.</div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
         <script>
