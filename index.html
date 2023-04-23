@@ -12,10 +12,8 @@
         <div id="app">
             <div style="width:100%; min-height:50px; position:fixed; background:rgba(0,0,0,0.3); display:flex; justify-content: flex-end;">
                 <div>
-                    <div :class="{'active': currentPage=='am'}" class="navBarButton"><h3>About Me</h3></div>
-                    <div :class="{'active': currentPage=='gp'}" class="navBarButton"><h3>Goals & Plans</h3></div>
-                    <div :class="{'active': currentPage=='sw'}" class="navBarButton"><h3>Strength & Weakness</h3></div>
-                    <div :class="{'active': currentPage=='c'}" class="navBarButton"><h3>Contact</h3></div>
+                    <div v-for="page in pages" :class="{'active': currentPage == page[0]}" @click="currentPage = page[0]"
+                    class="navBarButton"><h3>{{page[1]}}</h3></div>
                 </div>
             </div>
             <div v-if="currentPage=='am'" class="fullSize" style="width:100%; height:100%;">
@@ -28,7 +26,18 @@
         {
             data() 
             {
-                return { currentPage: 'am' }
+                var data = 
+                {
+                    currentPage: 'am',
+                    pages: 
+                    [
+                        ["am", "About Me"],
+                        ["gp", "Goals & Plans"],
+                        ["sw", "Strength & Weakness"],
+                        ["c", "Contact"]
+                    ]
+                };
+                return data;
             }
         }).mount('#app')
         </script>
